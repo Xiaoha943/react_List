@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //引入App
 import App from './App';
-//引入CSS样式
 
 ReactDOM.render(<App />,document.getElementById('root'));
 
