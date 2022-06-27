@@ -5,36 +5,18 @@ export default class List extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="card">
-                        <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-                            <img src="https://img2.woyaogexing.com/2022/06/21/9b10ffab353c85af!400x400.jpg" style={{ width: "100px" }} />
-                        </a>
-                        <p className="card-text">reactjs</p>
-                    </div>
-                    <div className="card">
-                        <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-                            <img alt="head_portrait" src="https://img2.woyaogexing.com/2022/06/21/9b10ffab353c85af!400x400.jpg" style={{ width: "100px" }} />
-                        </a>
-                        <p className="card-text">reactjs</p>
-                    </div>
-                    <div className="card">
-                        <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-                            <img alt="head_portrait" src="https://img2.woyaogexing.com/2022/06/21/9b10ffab353c85af!400x400.jpg" style={{ width: "100px" }} />
-                        </a>
-                        <p className="card-text">reactjs</p>
-                    </div>
-                    <div className="card">
-                        <a href="https://github.com/reactjs" target="_blank">
-                            <img alt="head_portrait" src="https://img2.woyaogexing.com/2022/06/21/9b10ffab353c85af!400x400.jpg" style={{ width: "100px" }} />
-                        </a>
-                        <p className="card-text">reactjs</p>
-                    </div>
-                    <div className="card">
-                        <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-                            <img alt="head_portrait" src="https://img2.woyaogexing.com/2022/06/21/9b10ffab353c85af!400x400.jpg" style={{ width: "100px" }} />
-                        </a>
-                        <p className="card-text">reactjs</p>
-                    </div>
+                    {
+                        this.props.users.map((itemsObj)=>{
+                            return(
+                                <div key ={itemsObj.id} className="card">
+                                    <a rel="noreferrer" href={itemsObj.html_url} target="_blank">
+                                        <img src={itemsObj.avatar_url} style={{ width: "100px" }} />
+                                    </a>
+                                    <p className="card-text">{itemsObj.login}</p>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )
