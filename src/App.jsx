@@ -3,17 +3,22 @@ import Search from './components/Search';
 import List from './components/List'
 import { Component } from 'react';
 export default class App extends Component {
-  state = { users: [] }
+  state = {
+    users: [], //users初始值为数组
+    isFirst: true,
+    isLoading: false,
+    err: '',
+  }
 
-  saveUsers = (users) => {
-    this.setState({ users })
+  saveUpdateMessage = (update) => {
+    this.setState(update)
   }
   render() {
     return (
       <div className="App">
         <div className="container">
-          <Search saveUsers={this.saveUsers} />
-          <List users={this.state.users} />
+          <Search saveUpdateMessage={this.saveUpdateMessage} />
+          <List {...this.state} />
         </div>
       </div>
     )
